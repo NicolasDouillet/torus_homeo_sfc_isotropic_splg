@@ -1,0 +1,199 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>torus_homeo_sfc_isotropic_splg</title><meta name="generator" content="MATLAB 9.7"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-09-29"><meta name="DC.source" content="doc.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>torus_homeo_sfc_isotropic_splg</h1><!--introduction--><p>Function to isotropically sample a given torus-homeomorphic surface.</p><p>Author &amp; support : nicolas.douillet (at) free.fr, 2017-2020.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Syntax</a></li><li><a href="#2">Description</a></li><li><a href="#3">See also</a></li><li><a href="#4">Input arguments</a></li><li><a href="#5">Output arguments</a></li><li><a href="#6">Example #1</a></li><li><a href="#7">Example #2</a></li></ul></div><h2 id="1">Syntax</h2><p>torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z);</p><p>torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v);</p><p>torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, option_random_sampling);</p><h2 id="2">Description</h2><p>torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z) generates a tricolon vector / [60*120 3] matrix of X, Y, and Z coordinates of points sampling the -torus-homeomorphic- surface defined by function handles fctn_x, fctn_y, and fctn_z.</p><p>torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v) generates range_u(1,3)*range_v(1,3) samples located in the area [min(u), max(u)] x [min(v) max(v)] = [range_u(1,1), range_u(1,2)] x [range_v(1,1) range_v(1,2)]</p><p>torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, option_random_sampling) randoms the sampling if option_random_sampling = true/1, else -option_random_sampling = false/0- sampling is uniform.</p><h2 id="3">See also</h2><p><a href="https://fr.mathworks.com/matlabcentral/fileexchange/64284-sphere-homeomorphic-surface-quasi-isotropic-sampling">sphere_homeo_sfc_isotropic_splg</a> | <a href="https://fr.mathworks.com/matlabcentral/fileexchange/69212-geoid">geoid</a> | <a href="https://fr.mathworks.com/help/matlab/ref/rand.html">rand</a> | <a href="https://fr.mathworks.com/help/matlab/ref/mesh.html">mesh</a> | <a href="https://fr.mathworks.com/help/matlab/ref/trimesh.html">trimesh</a></p><h2 id="4">Input arguments</h2><p>- fctn_x : function handle in x direction, in spherical coordinates, assumed overloaded for vectors and matrices</p><p>- fctn_y : function handle in y direction, in spherical coordinates, assumed overloaded for vectors and matrices</p><p>- fctn_z : function handle in z direction, in spherical coordinates, assumed overloaded for vectors and matrices</p><p>- range_u : real row vector double, u parameter vector of type : [min(u), max(u), nb_samples_u].</p><p>- range_v : real row vector double, v parameter vector of type : [min(v), max(v), nb_samples_v].</p><p>- option_random_sampling : logical *true (1) / false (0).</p><h2 id="5">Output arguments</h2><pre>      [| | |]
+- M = [X Y Z], real matrix double of data. Size(M) = [nb_samples_u*nb_samples_v 3].
+      [| | |]</pre><p>- u : real matrix double, the sampling matrix / grid in u direction. Size(u) = [nb_samples_u,nb_samples_v].</p><p>- v : real matrix double, the sampling matrix / grid in v direction. Size(v) = [nb_samples_u,nb_samples_v].</p><pre>      [|  |  | ]
+- T = [i1 i2 i3], positive integer matrix double, the triangulation. Size(T) = [nb_triangles,3],
+      [|  |  | ]</pre><pre>                 with nb_triangles = nb_samples_u*(nb_samples_v-2).
+                 T is relevant only in the case option_random_sampling = false/0.</pre><h2 id="6">Example #1</h2><p>Isotropic random sampling</p><pre class="codeinput">a = 1;
+b = 1;
+Rho = 8;
+r = 2;
+
+fctn_x = @(u,v)a*(Rho*cos(v)+r*sin(u).*cos(v));
+fctn_y = @(u,v)b*(Rho*sin(v)+r*sin(u).*sin(v));
+fctn_z = @(u,v)r*cos(u);
+
+range_u = [0 2*pi 40]; <span class="comment">% latitude angle for a torus</span>
+range_v = [0 2*pi 40]; <span class="comment">% longitude angle for a torus</span>
+
+[M1, u1, v1] = torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v);
+figure;
+plot3(M1(:,1), M1(:,2), M1(:,3), <span class="string">'b.'</span>), hold <span class="string">on</span>;
+axis <span class="string">equal</span>, axis <span class="string">tight</span>;
+colormap([0 0 1]);
+</pre><pre class="codeoutput">Random sampling option selected by default.
+</pre><img vspace="5" hspace="5" src="doc_01.png" alt=""> <h2 id="7">Example #2</h2><p>Isotropic regular sampling</p><pre class="codeinput">[M2, u2, v2, T] = torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, 0);
+TRI = triangulation(T, M2(:,1), M2(:,2), M2(:,3));
+
+figure;
+trimesh(TRI), hold <span class="string">on</span>;
+axis <span class="string">equal</span>, axis <span class="string">tight</span>;
+colormap([0 0 1]);
+</pre><img vspace="5" hspace="5" src="doc_02.png" alt=""> <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% torus_homeo_sfc_isotropic_splg
+%
+% Function to isotropically sample a given torus-homeomorphic surface.
+%
+% Author & support : nicolas.douillet (at) free.fr, 2017-2020.
+%
+%% Syntax
+%
+% torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z);
+%
+% torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v);
+%
+% torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, option_random_sampling);
+%
+%% Description
+%
+% torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z)
+% generates a tricolon vector / [60*120 3] matrix of X, Y, and Z coordinates
+% of points sampling the -torus-homeomorphic- surface defined by
+% function handles fctn_x, fctn_y, and fctn_z.
+%
+% torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v)
+% generates range_u(1,3)*range_v(1,3) samples located in the area
+% [min(u), max(u)] x [min(v) max(v)] = [range_u(1,1), range_u(1,2)] x [range_v(1,1) range_v(1,2)]
+%
+% torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, option_random_sampling)
+% randoms the sampling if option_random_sampling = true/1,
+% else -option_random_sampling = false/0- sampling is uniform.
+%
+%% See also
+%
+% <https://fr.mathworks.com/matlabcentral/fileexchange/64284-sphere-homeomorphic-surface-quasi-isotropic-sampling sphere_homeo_sfc_isotropic_splg> |
+% <https://fr.mathworks.com/matlabcentral/fileexchange/69212-geoid geoid> |
+% <https://fr.mathworks.com/help/matlab/ref/rand.html rand> | 
+% <https://fr.mathworks.com/help/matlab/ref/mesh.html mesh> | 
+% <https://fr.mathworks.com/help/matlab/ref/trimesh.html trimesh>
+%
+%% Input arguments
+%
+% - fctn_x : function handle in x direction, in spherical coordinates, assumed overloaded for vectors and matrices
+%
+% - fctn_y : function handle in y direction, in spherical coordinates, assumed overloaded for vectors and matrices
+%
+% - fctn_z : function handle in z direction, in spherical coordinates, assumed overloaded for vectors and matrices
+%
+% - range_u : real row vector double, u parameter vector of type : [min(u), max(u), nb_samples_u].
+%
+% - range_v : real row vector double, v parameter vector of type : [min(v), max(v), nb_samples_v].
+%
+% - option_random_sampling : logical *true (1) / false (0).
+%
+%% Output arguments
+%
+%        [| | |]
+% - M = [X Y Z], real matrix double of data. Size(M) = [nb_samples_u*nb_samples_v 3].
+%        [| | |]
+%
+% - u : real matrix double, the sampling matrix / grid in u direction. Size(u) = [nb_samples_u,nb_samples_v].
+%
+% - v : real matrix double, the sampling matrix / grid in v direction. Size(v) = [nb_samples_u,nb_samples_v].
+%
+%        [|  |  | ]
+% - T = [i1 i2 i3], positive integer matrix double, the triangulation. Size(T) = [nb_triangles,3],
+%        [|  |  | ]
+%
+%                   with nb_triangles = nb_samples_u*(nb_samples_v-2).
+%                   T is relevant only in the case option_random_sampling = false/0.
+%
+%% Example #1
+% Isotropic random sampling
+a = 1;
+b = 1;
+Rho = 8;
+r = 2;
+
+fctn_x = @(u,v)a*(Rho*cos(v)+r*sin(u).*cos(v));
+fctn_y = @(u,v)b*(Rho*sin(v)+r*sin(u).*sin(v));
+fctn_z = @(u,v)r*cos(u);
+
+range_u = [0 2*pi 40]; % latitude angle for a torus
+range_v = [0 2*pi 40]; % longitude angle for a torus
+
+[M1, u1, v1] = torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v);
+figure;
+plot3(M1(:,1), M1(:,2), M1(:,3), 'b.'), hold on;
+axis equal, axis tight;
+colormap([0 0 1]);
+
+%% Example #2
+% Isotropic regular sampling
+[M2, u2, v2, T] = torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, 0);
+TRI = triangulation(T, M2(:,1), M2(:,2), M2(:,3));
+
+figure;
+trimesh(TRI), hold on;
+axis equal, axis tight;
+colormap([0 0 1]);
+##### SOURCE END #####
+--></body></html>
