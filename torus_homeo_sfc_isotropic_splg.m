@@ -1,7 +1,7 @@
-function [M, u, v, T] = torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, option_random_sampling);
+function [M, u, v, T] = torus_homeo_sfc_isotropic_splg(fctn_x, fctn_y, fctn_z, range_u, range_v, option_random_sampling)
 %% torus_homeo_sfc_isotropic_splg : function to isotropically sample a given torus-homeomorphic surface.
 %
-% Author & support : nicolas.douillet (at) free.fr, 2017-2020.
+% Author : nicolas.douillet9 (at) gmail.com, 2017-2024.
 %
 %
 % Syntax

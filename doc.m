@@ -2,7 +2,7 @@
 %
 % Function to isotropically sample a given torus-homeomorphic surface.
 %
-% Author & support : nicolas.douillet (at) free.fr, 2017-2020.
+% Author : nicolas.douillet9 (at) gmail.com, 2017-2024.
 %
 %% Syntax
 %
@@ -30,6 +30,7 @@
 %% See also
 %
 % <https://fr.mathworks.com/matlabcentral/fileexchange/64284-sphere-homeomorphic-surface-quasi-isotropic-sampling sphere_homeo_sfc_isotropic_splg> |
+% <https://fr.mathworks.com/matlabcentral/fileexchange/85173-mesh-generation-toolbox?s_tid=srchtitle mesh_generation_toolbox> |
 % <https://fr.mathworks.com/matlabcentral/fileexchange/69212-geoid geoid> |
 % <https://fr.mathworks.com/help/matlab/ref/rand.html rand> | 
 % <https://fr.mathworks.com/help/matlab/ref/mesh.html mesh> | 
